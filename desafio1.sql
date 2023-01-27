@@ -52,13 +52,31 @@ DROP DATABASE IF EXISTS SpotifyClone;
     FOREIGN KEY (music_id) REFERENCES music (music_id),
   ) engine = InnoDB;
 
-  INSERT INTO SpotifyClone.tabela1 (coluna1, coluna2)
+  INSERT INTO SpotifyClone.plan (plan_id, plan_name, price)
   VALUES
-    ('exemplo de dados 1', 'exemplo de dados A'),
-    ('exemplo de dados 2', 'exemplo de dados B'),
-    ('exemplo de dados 3', 'exemplo de dados C');
+    (1, 'gratuito', 0.00),
+    (2, 'pessoal', 6.99);
+    (3, 'familiar', 7.99),
+    (4, 'universitário', 5.99),
 
-  INSERT INTO SpotifyClone.tabela2 (coluna1, coluna2)
+  INSERT INTO SpotifyClone.user (user_id, user_name, age, plan_id)
   VALUES
-    ('exemplo de dados 1', 'exemplo de dados X'),
-    ('exemplo de dados 2', 'exemplo de dados Y');
+    (1, 'Barbara Liskov', 82, 1),
+    (2, 'Robert Cecil Martin', 58, 1),
+    (3, 'Ada Lovelace', 37, 3),
+    (4, 'Martin Fowler', 46, 3),
+    (5, 'Sandi Metz', 58, 3),
+    (6, 'Paulo Freire', 19, 4),
+    (7, 'Bell Hooks', 26, 4),
+    (8, 'Christopher Alexander', 85, 2),
+    (9, 'Judith Butler', 45, 2),
+    (10, 'Jorge Amado', 58, 2);
+
+INSERT INTO SpotifyClone.artist (artist_id, artist_name)
+VALUES
+  (1, 'Beyoncé'),
+  (2, 'Queen'),
+  (3, 'Elis Regina'),
+  (4, 'Baco Exu do Blues'),
+  (5, 'Blind Guardian'),
+  (6, 'Nina Simone');
