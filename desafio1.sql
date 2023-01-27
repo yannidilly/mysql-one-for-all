@@ -31,8 +31,8 @@ DROP DATABASE IF EXISTS SpotifyClone;
   CREATE TABLE SpotifyClone.album(
     album_id INT PRIMARY KEY auto_increment,
     album_name VARCHAR(45) NOT NULL,
-    artist_id INT NOT NULL,
     release_year YEAR(4) NOT NULL,
+    artist_id INT NOT NULL,
     FOREIGN KEY (artist_id) REFERENCES artist (artist_id),
   ) engine = InnoDB;
 
@@ -97,4 +97,14 @@ VALUES
   (7, 6),
   (9, 3),
   (10, 2);
-  
+
+INSERT INTO SpotifyClone.album (album_id, album_name, release_year, artist_id)
+VALUES
+  (1, 'Renaissance', 2022, 1),
+  (2, 'Jazz', 1978, 2),
+  (3, 'Hot Space', 1982, 2),
+  (4, 'Falso Brilhante', 1998, 3),
+  (5, 'Vento de Maio', 2001, 3),
+  (6, 'QVVJFA?', 2003, 4),
+  (7, 'Somewhere Far Beyond', 2007, 5),
+  (8, 'I Put A Spell On You', 2012, 6);
