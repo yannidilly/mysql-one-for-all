@@ -37,10 +37,10 @@ DROP DATABASE IF EXISTS SpotifyClone;
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.music(
+    album_id INT NOT NULL,
     music_id INT PRIMARY KEY auto_increment,
     music_name VARCHAR(45) NOT NULL,
     duration INT NOT NULL,
-    album_id INT NOT NULL,
     FOREIGN KEY (album_id) REFERENCES album (album_id),
   ) engine = InnoDB;
 
@@ -108,3 +108,16 @@ VALUES
   (6, 'QVVJFA?', 2003, 4),
   (7, 'Somewhere Far Beyond', 2007, 5),
   (8, 'I Put A Spell On You', 2012, 6);
+
+INSERT INTO SpotifyClone.music (album_id, music_id, music_name, duration)
+VALUES
+  (1, 1, 'BREAK MY SOUL', 279),
+  (1, 2, 'VIRGO’S GROOVE', 369),
+  (1, 3, 'ALIEN SUPERSTAR', 116),
+  (2, 4, 'Don’t Stop Me Now', 203),
+  (3, 5, 'Under Pressure', 152),
+  (4, 6, 'Como Nossos Pais', 105),
+  (5, 7, 'O Medo de Amar é o Medo de Ser Livre', 207),
+  (6, 8, 'Samba em Paris', 267),
+  (7, 9, 'The Bard’s Song', 244),
+  (8, 10, 'Feeling Good', 100);
