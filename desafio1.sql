@@ -22,10 +22,10 @@ DROP DATABASE IF EXISTS SpotifyClone;
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.follow(
-    artist_id INT PRIMARY KEY,
     user_id INT PRIMARY KEY,
-    FOREIGN KEY (artist_id) REFERENCES artist (artist_id),
+    artist_id INT PRIMARY KEY,
     FOREIGN KEY (user_id) REFERENCES user (user_id),
+    FOREIGN KEY (artist_id) REFERENCES artist (artist_id),
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.album(
@@ -80,3 +80,21 @@ VALUES
   (4, 'Baco Exu do Blues'),
   (5, 'Blind Guardian'),
   (6, 'Nina Simone');
+
+INSERT INTO SpotifyClone.follow (user_id, artist_id)
+VALUES
+  (1, 1),
+  (1, 2),
+  (1, 3),
+  (2, 1),
+  (2, 3),
+  (3, 2),
+  (4, 4),
+  (5, 5),
+  (5, 6),
+  (6, 6),
+  (6, 1),
+  (7, 6),
+  (9, 3),
+  (10, 2);
+  
