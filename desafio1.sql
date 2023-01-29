@@ -2,8 +2,6 @@ DROP DATABASE IF EXISTS SpotifyClone;
 
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
-USE SpotifyClone;
-
 CREATE TABLE SpotifyClone.plan(
     plan_id INT PRIMARY KEY auto_increment,
     plan_name VARCHAR(45) NOT NULL,
