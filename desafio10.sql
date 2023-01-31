@@ -1,5 +1,6 @@
 SELECT 
-    music.music_name AS nome, COUNT(plan.plan_name)
+    music.music_name AS nome,
+    COUNT(plan.plan_name) AS reproducoes
 FROM
     SpotifyClone.history AS history
         INNER JOIN
